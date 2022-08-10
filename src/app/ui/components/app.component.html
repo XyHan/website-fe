@@ -1,0 +1,24 @@
+<main>
+  <header>
+    <h1>Robin CHEVALIER</h1>
+    <h3>Développeur Web</h3>
+    <nav>
+      <ul>
+        <li>Technos</li>
+        <li>
+          <a
+            [routerLink]="['/experiences']"
+            [routerLinkActive]="['active-link']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >Experiences</a></li>
+        <li>Education</li>
+        <li>
+          <a [routerLink]="['/experiences']" (click)="switchTheme()" class="theme-switch">{{ currentTheme }} theme</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</main>

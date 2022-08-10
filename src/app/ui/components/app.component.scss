@@ -1,0 +1,50 @@
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  header {
+    max-width: 30vw;
+    height: 100%;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    h1, h3 {
+      margin: 0;
+    }
+    h1 {
+      color: #FFFFFF;
+      background-color: var(--app-title-text);
+      padding: 20px 30px;
+      margin: 0;
+    }
+    h3 {
+      padding: 0 5px;
+    }
+    nav {
+      ul {
+        li {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          a {
+            text-decoration: none;
+            color: var(--app-title-text);
+            &.active-link {
+              color: #FFFFFF;
+              background-color: var(--app-title-text);
+            }
+          }
+          .theme-switch {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+  section {
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,46 @@
+//$xs: 600px;
+//$sm: 960px;
+//$md: 1264px;
+//$lg: 1904px;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--app-primary-background);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body[data-theme="light"] {
+  --app-primary-background: #F7F7F7;
+  --app-secondary-background: #F7F7F7;
+  --app-input-background: #FFFFFF;
+  --app-active-text: #B70217;
+  --app-grey-text: #828282;
+  --app-title-text: #212121;
+  --app-subtitle-text: #828282;
+  --app-card-border: #E5E5E5;
+  --app-second-text: #4F4F4F;
+  --app-side-block-title: #4F4F4F;
+}
+body[data-theme="dark"] {
+  --app-input-background: #F7F7F7;
+  --app-primary-background: #323540;
+  --app-secondary-background: #242731;
+  --app-active-text: #F1E8E9;
+  --app-grey-text: #828282;
+  --app-title-text: #FFFFFF;
+  --app-subtitle-text: #B4B4B4;
+  --app-card-border: #1B1C1F;
+  --app-side-block-title: #B4B4B4;
+}
+
+* {
+  box-sizing: border-box;
+}
