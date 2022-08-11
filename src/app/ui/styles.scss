@@ -16,6 +16,12 @@ body {
   font-family: Roboto, Arial, sans-serif;
 }
 
+@media (max-width: 930px) {
+  body {
+    height: auto;
+  }
+}
+
 body[data-theme="light"] {
   --app-primary-background: #F7F7F7;
   --app-secondary-background: #F7F7F7;
