@@ -4,6 +4,8 @@ h1 {
 }
 
 ul {
+  margin: 0;
+  padding: 0 50px;
   li {
     details {
       cursor: pointer;
@@ -12,5 +14,12 @@ ul {
         flex-direction: row;
       }
     }
+  }
+}
+
+@media (max-width: 930px) {
+  ul {
+    margin: 0;
+    padding: 0 20px;
   }
 }

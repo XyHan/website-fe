@@ -4,14 +4,33 @@
     <h3>Développeur Web</h3>
     <nav>
       <ul>
-        <li>Technos</li>
         <li>
           <a
             [routerLink]="['/experiences']"
             [routerLinkActive]="['active-link']"
             [routerLinkActiveOptions]="{ exact: true }"
-          >Experiences</a></li>
-        <li>Education</li>
+          >
+            TECHNOS
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/experiences']"
+            [routerLinkActive]="['active-link']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            EXPERIENCES
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/experiences']"
+            [routerLinkActive]="['active-link']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            EDUCATION
+          </a>
+        </li>
         <li>
           <a [routerLink]="['/experiences']" (click)="switchTheme()" class="theme-switch">{{ themeToSwitchWith() }} theme</a>
         </li>
