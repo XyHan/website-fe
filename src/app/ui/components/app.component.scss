@@ -4,6 +4,7 @@ main {
   height: 100%;
   width: 100%;
   header {
+    min-width: 20vw;
     max-width: 30vw;
     height: 100%;
     border-right: 1px solid black;
@@ -14,10 +15,12 @@ main {
       margin: 0;
     }
     h1 {
+      width: 100%;
       color: #FFFFFF;
       background-color: var(--app-title-text);
-      padding: 20px 30px;
+      padding: 20px 10px;
       margin: 0;
+      text-align: center;
     }
     h3 {
       padding: 0 5px;
@@ -25,7 +28,6 @@ main {
     nav {
       ul {
         li {
-          list-style-type: none;
           margin: 0;
           padding: 0;
           a {

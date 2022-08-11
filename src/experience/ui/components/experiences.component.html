@@ -1,1 +1,13 @@
-<h1>Experiences</h1>
+<ul>
+    <li *ngFor="let experience of experiences">
+        <details open>
+            <summary>
+                <header>
+                    <h2>{{ experience.company }}</h2>
+                    <h3>{{ experience.title }}</h3>
+                </header>
+            </summary>
+            {{ experience.description }}
+        </details>
+    </li>
+</ul>

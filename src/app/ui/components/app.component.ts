@@ -30,11 +30,15 @@ export class AppComponent implements OnInit {
   }
 
   switchTheme(): void {
-    const newThemeValue = this._currentTheme === 'light' ? 'dark' : 'light';
+    const newThemeValue = this.themeToSwitchWith();
     if (this._body) { this._themeManager.setTheme(this._body, newThemeValue); }
   }
 
   get currentTheme(): ThemeType | null {
     return this._currentTheme;
+  }
+
+  public themeToSwitchWith(): ThemeType {
+    return this._currentTheme === 'light' ? 'dark' : 'light';
   }
 }

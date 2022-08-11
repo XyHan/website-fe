@@ -2,3 +2,15 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
+ul {
+  li {
+    details {
+      cursor: pointer;
+      summary {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}
