@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ExperiencesComponent } from './ui/components/experiences.component';
-import { ExperiencesRepository } from './infrastructure/repository/experiences.repository';
-import { ExperiencesService } from "./infrastructure/service/experiences.service";
+import { ExperienceRepository } from './infrastructure/repository/experience.repository';
+import { ExperienceService } from "./infrastructure/service/experience.service";
 
 @NgModule({
   declarations: [ExperiencesComponent],
   imports: [BrowserModule],
-  providers: [ExperiencesRepository, ExperiencesService],
+  providers: [ExperienceRepository, ExperienceService],
 })
 export class ExperienceModule { }

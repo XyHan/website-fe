@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Experiences } from '../../domain/model/experiences';
-import { ExperiencesService, ExperiencesServiceInterface } from '../../infrastructure/service/experiences.service';
+import { Experience } from '../../domain/model/experience';
+import { ExperienceService, ExperiencesServiceInterface } from '../../infrastructure/service/experience.service';
 
 @Component({
   selector: 'app-experience',
@@ -10,10 +10,10 @@ import { ExperiencesService, ExperiencesServiceInterface } from '../../infrastru
 export class ExperiencesComponent implements OnInit {
   private _error: Error | null;
   private _isLoading: boolean;
-  private _experiences: Experiences[];
+  private _experiences: Experience[];
   private _experiencesService: ExperiencesServiceInterface;
 
-  constructor(@Inject(ExperiencesService) experiencesService: ExperiencesServiceInterface) {
+  constructor(@Inject(ExperienceService) experiencesService: ExperiencesServiceInterface) {
     this._error = null;
     this._isLoading = true;
     this._experiences = [];
@@ -28,7 +28,7 @@ export class ExperiencesComponent implements OnInit {
     this._experiencesService
       .listAllExperiences()
       .subscribe({
-        next: (experiences: Experiences[]) => {
+        next: (experiences: Experience[]) => {
           this._experiences = experiences;
           this._isLoading = false;
         },
@@ -41,7 +41,7 @@ export class ExperiencesComponent implements OnInit {
   }
 
 
-  get experiences(): Experiences[] {
+  get experiences(): Experience[] {
     return this._experiences;
   }
 }
