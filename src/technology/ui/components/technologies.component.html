@@ -1,0 +1,17 @@
+<div class="techno-wrapper">
+    <ul>
+        <li *ngFor="let language of getLanguages()">
+            <img src="technology/ui/assets/{{ language.image }}" alt="{{ language.name }}">
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let framework of getFrameworks()">
+            <img src="technology/ui/assets/{{ framework.image }}" alt="{{ framework.name }}">
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let other of getOthers()">
+            <img src="technology/ui/assets/{{ other.image }}" alt="{{ other.name }}">
+        </li>
+    </ul>
+</div>

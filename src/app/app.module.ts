@@ -4,6 +4,7 @@ import { AppRoutingModule } from './infrastructure/app-routing.module';
 import { AppComponent } from './ui/components/app.component';
 import { ThemeManager } from './infrastructure/manager/theme.manager';
 import { ExperienceModule } from '../experience/experience.module';
+import { TechnologyModule } from '../technology/technology.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ExperienceModule } from '../experience/experience.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ExperienceModule
+    ExperienceModule,
+    TechnologyModule
   ],
   providers: [ThemeManager],
   bootstrap: [AppComponent]
