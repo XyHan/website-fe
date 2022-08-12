@@ -34,10 +34,6 @@ export class AppComponent implements OnInit {
     if (this._body) { this._themeManager.setTheme(this._body, newThemeValue); }
   }
 
-  get currentTheme(): ThemeType | null {
-    return this._currentTheme;
-  }
-
   public themeToSwitchWith(): ThemeType {
     return this._currentTheme === 'light' ? 'dark' : 'light';
   }
