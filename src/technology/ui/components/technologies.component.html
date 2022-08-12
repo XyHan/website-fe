@@ -1,17 +1,27 @@
-<div class="techno-wrapper">
+<div *ngIf="technologies" class="techno-wrapper">
     <ul>
-        <li *ngFor="let language of getLanguages()">
+        <li *ngFor="let language of technologies.languages">
             <img src="technology/ui/assets/{{ language.image }}" alt="{{ language.name }}">
         </li>
     </ul>
     <ul>
-        <li *ngFor="let framework of getFrameworks()">
+        <li *ngFor="let framework of technologies.frameworks">
             <img src="technology/ui/assets/{{ framework.image }}" alt="{{ framework.name }}">
         </li>
     </ul>
     <ul>
-        <li *ngFor="let other of getOthers()">
-            <img src="technology/ui/assets/{{ other.image }}" alt="{{ other.name }}">
+        <li *ngFor="let library of technologies.libraries">
+            <img src="technology/ui/assets/{{ library.image }}" alt="{{ library.name }}">
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let database of technologies.databases">
+            <img src="technology/ui/assets/{{ database.image }}" alt="{{ database.name }}">
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let system of technologies.systems">
+            <img src="technology/ui/assets/{{ system.image }}" alt="{{ system.name }}">
         </li>
     </ul>
 </div>

@@ -1,3 +1,7 @@
 export interface TechnologyRepositoryInterface {
-    listAll(): any;
+    listAllLanguages(): any;
+    listAllDatabases(): any;
+    listAllFrameworks(): any;
+    listAllSystems(): any;
+    listAllLibraries(): any;
 }

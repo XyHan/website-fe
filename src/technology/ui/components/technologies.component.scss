@@ -1,12 +1,15 @@
 .techno-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
   ul {
+    width: 90%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     li {
       width: 110px;
       height: 110px;
