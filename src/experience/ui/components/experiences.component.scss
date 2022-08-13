@@ -4,7 +4,7 @@ article {
   width: 100%;
   h1 {
     margin: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--app-primary-text);
   }
 
   ul {
@@ -55,6 +55,7 @@ article:nth-child(2) {
 
 @media (max-width: 930px) {
   article {
+    padding: 0 20px;
     ul {
       margin: 0;
     }

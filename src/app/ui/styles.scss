@@ -7,6 +7,7 @@ html {
 body {
   background-color: var(--app-primary-background);
   font-family: Roboto, Arial, sans-serif;
+  color: var(--app-primary-text);
 }
 
 @media (max-width: 930px) {
@@ -17,26 +18,35 @@ body {
 
 body[data-theme="light"] {
   --app-primary-background: #F7F7F7;
-  --app-secondary-background: #F7F7F7;
-  --app-input-background: #FFFFFF;
-  --app-active-text: #B70217;
-  --app-grey-text: #828282;
-  --app-title-text: #212121;
-  --app-subtitle-text: #828282;
-  --app-card-border: #E5E5E5;
-  --app-second-text: #4F4F4F;
-  --app-side-block-title: #4F4F4F;
+  --app-primary-text: #000000;
+  --app-title-background: rgb(10, 10, 10);
+  --app-title-text: #F7F7F7;
 }
 body[data-theme="dark"] {
-  --app-input-background: #F7F7F7;
-  --app-primary-background: #323540;
-  --app-secondary-background: #242731;
-  --app-active-text: #F1E8E9;
-  --app-grey-text: #828282;
-  --app-title-text: #FFFFFF;
-  --app-subtitle-text: #B4B4B4;
-  --app-card-border: #1B1C1F;
-  --app-side-block-title: #B4B4B4;
+  --app-primary-background: rgb(10, 10, 10);
+  --app-primary-text: rgb(40, 219, 73);
+  --app-title-background: rgb(40, 219, 73);
+  --app-title-text: rgb(10, 10, 10);
+
+  text-shadow: #0e2013 0 0 10px, currentColor 0 0 10px;
+}
+body[data-theme="dark"]::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(hsla(0,6%,7%,0) 50%,rgba(0,0,0,.25) 0),linear-gradient(90deg,rgba(255,0,0,.06),rgba(0,255,0,.02),rgba(0,0,255,.06));
+  background-size: 100% 2px,3px 100%;
+}
+body[data-theme="dark"]::after {
+  background: hsla(0,6%, 7%, .1);
+  opacity: 0;
+  animation: flicker .15s infinite;
 }
 
 * {

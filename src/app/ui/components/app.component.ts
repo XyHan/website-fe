@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ThemeManagerInterface, ThemeType } from '../../domain/app/manager/theme.manager.interface';
-import { ThemeManager } from '../../infrastructure/manager/theme.manager';
+import { storageItemName, ThemeManager } from '../../infrastructure/manager/theme.manager';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     // Get html template body element
     this._body = (document.querySelector('body') as HTMLElement);
     // Set current theme from localStorage. If there is no stored data, set light as default value;
-    this._themeManager.setTheme(this._body, localStorage.getItem('theme') as ThemeType || 'light');
+    this._themeManager.setTheme(this._body, localStorage.getItem(storageItemName) as ThemeType || 'light');
     // Subscribe to the theme observable to get current theme when it changes;
     this._themeManager.theme.subscribe((theme: ThemeType) => this._currentTheme = theme);
   }
