@@ -1,6 +1,7 @@
 article {
   margin-top: 30px;
   padding: 0 50px;
+  width: 100%;
   h1 {
     margin: 0;
     border-bottom: 1px solid black;
@@ -13,13 +14,34 @@ article {
       margin: 40px 0 0 0;
       details {
         cursor: pointer;
+        p {
+          text-align: justify;
+          text-justify: inter-word;
+        }
         summary {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           margin: 0 0 15px 0;
           h2, h3 {
             margin: 0;
             padding: 0;
+          }
+          .subheader {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 5px;
+            &--dates {
+              display: flex;
+              flex-direction: row;
+              text-transform: capitalize;
+              &__end::before {
+                content: '-';
+                margin: 0 5px;
+              }
+            }
           }
         }
       }
@@ -28,7 +50,7 @@ article {
 }
 
 article:nth-child(2) {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 @media (max-width: 930px) {

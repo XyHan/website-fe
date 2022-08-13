@@ -1,15 +1,19 @@
 <article *ngIf="experiences && experiences.jobs">
     <h1>Expériences</h1>
     <ul>
-        <li *ngFor="let jobs of experiences.jobs">
+        <li *ngFor="let job of experiences.jobs">
             <details open>
                 <summary>
-                    <header>
-                        <h2>{{ jobs.company }}</h2>
-                        <h3>{{ jobs.title }}</h3>
-                    </header>
+                    <h2>{{ job.company }}</h2>
+                    <div class="subheader">
+                        <h3>{{ job.title }}</h3>
+                        <div class="subheader--dates">
+                            <span>{{ job.startDate | date:'MMMM yyyy':'UTC':'fr' }}</span>
+                            <span *ngIf="job.endDate" class="subheader--dates__end">{{ job.endDate | date:'MMMM yyyy':'UTC':'fr' }}</span>
+                        </div>
+                    </div>
                 </summary>
-                {{ jobs.description }}
+                <p>{{ job.description }}</p>
             </details>
         </li>
     </ul>
@@ -21,12 +25,15 @@
         <li *ngFor="let education of experiences.educations">
             <details open>
                 <summary>
-                    <header>
-                        <h2>{{ education.company }}</h2>
-                        <h3>{{ education.title }}</h3>
-                    </header>
+                    <h2>{{ education.title }}</h2>
+                    <div class="subheader">
+                        <h3>{{ education.company }}</h3>
+                        <div class="subheader--dates">
+                            <span>{{ education.startDate | date:'MMMM yyyy':'UTC':'fr' }}</span>
+                        </div>
+                    </div>
                 </summary>
-                {{ education.description }}
+                <p>{{ education.description }}</p>
             </details>
         </li>
     </ul>
