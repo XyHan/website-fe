@@ -1,3 +1,4 @@
 export interface ExperienceRepositoryInterface {
-    listAll(): any;
+    listAllJobs(): any;
+    listAllEducations(): any;
 }

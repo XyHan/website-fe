@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ThemeManagerInterface, ThemeType } from '../../domain/app/manager/theme.manager.interface';
 import { ThemeManager } from '../../infrastructure/manager/theme.manager';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,16 @@ import { ThemeManager } from '../../infrastructure/manager/theme.manager';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  private readonly _router: Router;
   private readonly _themeManager: ThemeManagerInterface;
   private _currentTheme: ThemeType | null;
   private _body: HTMLElement | null;
 
   constructor(
+    @Inject(Router) router: Router,
     @Inject(ThemeManager) themeManager: ThemeManagerInterface
   ) {
+    this._router = router;
     this._themeManager = themeManager;
     this._currentTheme = 'light';
     this._body = null;
@@ -36,5 +40,9 @@ export class AppComponent implements OnInit {
 
   public themeToSwitchWith(): ThemeType {
     return this._currentTheme === 'light' ? 'dark' : 'light';
+  }
+
+  get router(): Router {
+    return this._router;
   }
 }

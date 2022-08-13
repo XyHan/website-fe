@@ -1,12 +1,13 @@
 import { ExperienceRepositoryInterface } from '../../domain/repository/experience.repository.interface';
 import { catchError, Observable } from 'rxjs';
-import { Experience } from '../../domain/model/experience';
+import { ExperienceInterface } from '../../domain/model/experience';
 import { ExperienceServiceException } from './experience.service.exception';
 import { Inject, Injectable } from '@angular/core';
 import { ExperienceRepository } from '../repository/experience.repository';
 
 export interface ExperiencesServiceInterface {
-  listAllExperiences(): Observable<Experience[]>;
+  listAllJobs(): Observable<ExperienceInterface[]>;
+  listAllEducations(): Observable<ExperienceInterface[]>;
 }
 
 @Injectable()
@@ -17,14 +18,25 @@ export class ExperienceService implements ExperiencesServiceInterface {
     this._experiencesRepository = experiencesRepository;
   }
 
-  public listAllExperiences(): Observable<Experience[]> {
+  public listAllJobs(): Observable<ExperienceInterface[]> {
     return this._experiencesRepository
-      .listAll()
+      .listAllJobs()
       .pipe(
         catchError((error) => {
-            throw new ExperienceServiceException(`ExperiencesRepository - listAll - ${error.message}`);
+            throw new ExperienceServiceException(`ExperiencesRepository - listAllJobs - ${error.message}`);
         })
       )
     ;
+  }
+
+  public listAllEducations(): Observable<ExperienceInterface[]> {
+    return this._experiencesRepository
+      .listAllEducations()
+      .pipe(
+        catchError((error) => {
+          throw new ExperienceServiceException(`ExperiencesRepository - listAllEducations - ${error.message}`);
+        })
+      )
+      ;
   }
 }

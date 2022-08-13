@@ -6,7 +6,7 @@ export interface ExperienceInterface {
     description: string;
 }
 
-export class Experience implements ExperienceInterface{
+export abstract class Experience implements ExperienceInterface{
     protected _title: string;
     protected _company: string;
     protected _startDate: Date;

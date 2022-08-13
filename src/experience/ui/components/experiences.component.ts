@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Experience } from '../../domain/model/experience';
+import { Experience, ExperienceInterface } from '../../domain/model/experience';
 import { ExperienceService, ExperiencesServiceInterface } from '../../infrastructure/service/experience.service';
+import { forkJoin, Observable } from 'rxjs';
+import { ExperienceType } from '../../domain/type/experience.type';
 
 @Component({
   selector: 'app-experience',
@@ -10,13 +12,13 @@ import { ExperienceService, ExperiencesServiceInterface } from '../../infrastruc
 export class ExperiencesComponent implements OnInit {
   private _error: Error | null;
   private _isLoading: boolean;
-  private _experiences: Experience[];
+  private _experiences: ExperienceType | null;
   private _experiencesService: ExperiencesServiceInterface;
 
   constructor(@Inject(ExperienceService) experiencesService: ExperiencesServiceInterface) {
     this._error = null;
     this._isLoading = true;
-    this._experiences = [];
+    this._experiences = null;
     this._experiencesService = experiencesService;
   }
 
@@ -25,23 +27,27 @@ export class ExperiencesComponent implements OnInit {
   }
 
   private getExperiences(): void {
-    this._experiencesService
-      .listAllExperiences()
-      .subscribe({
-        next: (experiences: Experience[]) => {
-          this._experiences = experiences;
-          this._isLoading = false;
-        },
-        error: (error: any) => {
-          console.error('ExperiencesComponent error: ', error.message);
-          this._error = new Error(`Erreur: Impossible de récupérer les expériences`);
-        },
-        complete: () => {}
-      });
+    const jobs$: Observable<ExperienceInterface[]> = this._experiencesService.listAllJobs();
+    const educations$: Observable<ExperienceInterface[]> = this._experiencesService.listAllEducations();
+
+    forkJoin({
+      jobs: jobs$,
+      educations: educations$
+    }).subscribe({
+      next: (value: ExperienceType) => {
+        this._experiences = value;
+        this._isLoading = false;
+      },
+      error: (error: any) => {
+        console.error('ExperiencesComponent error: ', error.message);
+        this._error = new Error(`Erreur: Impossible de récupérer les expériences`);
+      },
+      complete: () => {}
+    });
   }
 
 
-  get experiences(): Experience[] {
+  get experiences(): ExperienceType | null {
     return this._experiences;
   }
 }
