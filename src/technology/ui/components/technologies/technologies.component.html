@@ -1,0 +1,42 @@
+<ul *ngIf="technologies" class="techno-wrapper">
+    <li class="techno-wrapper__group">
+        <h3>Langages</h3>
+        <ul class="technologies">
+            <li *ngFor="let language of technologies.languages" class="technologies-item">
+                <span>{{ language.name }}</span>
+            </li>
+        </ul>
+    </li>
+    <li class="techno-wrapper__group">
+        <h3>Frameworks</h3>
+        <ul class="technologies">
+            <li *ngFor="let framework of technologies.frameworks" class="technologies-item">
+                <span>{{ framework.name }}</span>
+            </li>
+        </ul>
+    </li>
+    <li class="techno-wrapper__group">
+        <h3>Librairies</h3>
+        <ul class="technologies">
+            <li *ngFor="let library of technologies.libraries" class="technologies-item">
+                <span>{{ library.name }}</span>
+            </li>
+        </ul>
+    </li>
+    <li class="techno-wrapper__group">
+        <h3>Bases de données</h3>
+        <ul class="technologies">
+            <li *ngFor="let database of technologies.databases" class="technologies-item">
+                <span>{{ database.name }}</span>
+            </li>
+        </ul>
+    </li>
+    <li class="techno-wrapper__group">
+        <h3>Systems</h3>
+        <ul class="technologies">
+            <li *ngFor="let system of technologies.systems" class="technologies-item">
+                <span>{{ system.name }}</span>
+            </li>
+        </ul>
+    </li>
+</ul>

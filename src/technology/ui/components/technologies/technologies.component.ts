@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { TechnologyService, TechnologyServiceInterface } from '../../infrastructure/service/technology.service';
-import { TechnologyInterface } from '../../domain/model/technology';
+import { TechnologyService, TechnologyServiceInterface } from '../../../infrastructure/service/technology.service';
+import { TechnologyInterface } from '../../../domain/model/technology';
 import { forkJoin, Observable } from 'rxjs';
-import { TechnologyType } from '../../domain/type/technology.type';
+import { TechnologyType } from '../../../domain/type/technology.type';
 
 @Component({
   selector: 'app-technologies',

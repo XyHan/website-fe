@@ -1,0 +1,57 @@
+.techno-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px 0 0 0;
+  &__group {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 50px;
+    h3 {
+      min-width: 200px;
+      margin: 0;
+      padding: 13px 0 0 0;
+    }
+    .technologies {
+      padding: 5px 0;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 5px;
+      &-item {
+        padding: 10px 15px;
+        background-color: var(--app-title-background);
+        color: var(--app-title-text);
+        span {
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 930px) {
+  .techno-wrapper {
+    padding: 0;
+    gap: 20px;
+    &__group {
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      h3 {
+        margin: 10px 0;
+      }
+      .technologies {
+        &-item {
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}
