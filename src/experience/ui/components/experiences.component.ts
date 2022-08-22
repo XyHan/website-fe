@@ -1,14 +1,16 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { ExperienceInterface } from '../../domain/model/experience';
 import { ExperienceService, ExperiencesServiceInterface } from '../../infrastructure/service/experience.service';
 import { forkJoin, Observable } from 'rxjs';
 import { ExperienceType } from '../../domain/type/experience.type';
 import { Meta, Title } from '@angular/platform-browser';
+import { JobInterface } from '../../domain/model/job';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experiences.component.html',
-  styleUrls: ['./experiences.component.scss']
+  styleUrls: ['./experiences.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ExperiencesComponent implements OnInit {
   private _error: Error | null;
@@ -41,7 +43,7 @@ export class ExperiencesComponent implements OnInit {
   }
 
   private getExperiences(): void {
-    const jobs$: Observable<ExperienceInterface[]> = this._experiencesService.listAllJobs();
+    const jobs$: Observable<JobInterface[]> = this._experiencesService.listAllJobs();
     const educations$: Observable<ExperienceInterface[]> = this._experiencesService.listAllEducations();
 
     forkJoin({

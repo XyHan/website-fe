@@ -4,16 +4,17 @@
         <li *ngFor="let job of experiences.jobs">
             <details open>
                 <summary>
-                    <h2>{{ job.title }}</h2>
+                    <h2>{{ job.title }} <span>- {{ job.contractType }}</span></h2>
                     <div class="subheader">
-                        <h3>{{ job.company }}</h3>
+                        <h3>{{ job.company }} <span>- {{ job.city }}</span></h3>
                         <div class="subheader--dates">
+                            <span *ngIf="!job.endDate" class="subheader--dates__start_prefix">Depuis </span>
                             <span>{{ job.startDate | date:'MMMM yyyy':'UTC':'fr' }}</span>
                             <span *ngIf="job.endDate" class="subheader--dates__end">{{ job.endDate | date:'MMMM yyyy':'UTC':'fr' }}</span>
                         </div>
                     </div>
                 </summary>
-                <p>{{ job.description }}</p>
+                <div [innerHTML]="job.description"></div>
             </details>
         </li>
     </ul>
@@ -27,9 +28,9 @@
                 <summary>
                     <h2>{{ education.title }}</h2>
                     <div class="subheader">
-                        <h3>{{ education.company }}</h3>
+                        <h3>{{ education.company }} <span>- {{ education.city }}</span></h3>
                         <div class="subheader--dates">
-                            <span>{{ education.startDate | date:'MMMM yyyy':'UTC':'fr' }}</span>
+                            <span>{{ education.startDate | date:'yyyy':'UTC':'fr' }}</span>
                         </div>
                     </div>
                 </summary>

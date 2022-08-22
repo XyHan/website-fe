@@ -15,11 +15,22 @@ article {
       margin: 40px 0 0 0;
       details {
         cursor: pointer;
-        p {
+        div {
           text-align: justify;
           text-justify: inter-word;
           font-weight: lighter;
           font-size: 18px;
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 !important;
+            margin: 0 0 0 16px !important;
+            li {
+              list-style-type: square !important;
+              margin: 0 !important;
+            }
+          }
         }
         summary {
           display: flex;
@@ -29,9 +40,19 @@ article {
             margin: 0;
             padding: 0;
           }
+          h2 {
+            span {
+              font-weight: 100;
+              font-style: normal;
+            }
+          }
           h3 {
             font-weight: normal;
             font-style: italic;
+            span {
+              font-weight: 100;
+              font-style: italic;
+            }
           }
           .subheader {
             display: flex;
@@ -46,6 +67,11 @@ article {
               text-transform: capitalize;
               height: 25px;
               padding: 3px 0;
+              &__start {
+                &_prefix {
+                  margin-right: 5px;
+                }
+              }
               &__end::before {
                 content: '-';
                 margin: 0 5px;

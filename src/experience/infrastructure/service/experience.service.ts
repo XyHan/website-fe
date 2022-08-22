@@ -4,9 +4,10 @@ import { ExperienceInterface } from '../../domain/model/experience';
 import { ExperienceServiceException } from './experience.service.exception';
 import { Inject, Injectable } from '@angular/core';
 import { ExperienceRepository } from '../repository/experience.repository';
+import { JobInterface } from '../../domain/model/job';
 
 export interface ExperiencesServiceInterface {
-  listAllJobs(): Observable<ExperienceInterface[]>;
+  listAllJobs(): Observable<JobInterface[]>;
   listAllEducations(): Observable<ExperienceInterface[]>;
 }
 
@@ -18,7 +19,7 @@ export class ExperienceService implements ExperiencesServiceInterface {
     this._experiencesRepository = experiencesRepository;
   }
 
-  public listAllJobs(): Observable<ExperienceInterface[]> {
+  public listAllJobs(): Observable<JobInterface[]> {
     return this._experiencesRepository
       .listAllJobs()
       .pipe(
