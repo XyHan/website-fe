@@ -3,6 +3,7 @@ import { TechnologyService, TechnologyServiceInterface } from '../../../infrastr
 import { TechnologyInterface } from '../../../domain/model/technology';
 import { forkJoin, Observable } from 'rxjs';
 import { TechnologyType } from '../../../domain/type/technology.type';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-technologies',
@@ -13,16 +14,29 @@ export class TechnologiesComponent implements OnInit {
   private _error: Error | null;
   private _isLoading: boolean;
   private _technologies: TechnologyType | null;
-  private _technologiesService: TechnologyServiceInterface;
+  private readonly _technologiesService: TechnologyServiceInterface;
+  private readonly _metaService: Meta;
+  private readonly _titleService: Title;
 
-  constructor(@Inject(TechnologyService) experiencesService: TechnologyServiceInterface) {
+  constructor(
+    @Inject(TechnologyService) experiencesService: TechnologyServiceInterface,
+    @Inject(Meta) metaService: Meta,
+    @Inject(Title) titleService: Title,
+  ) {
     this._error = null;
     this._isLoading = true;
     this._technologies = null;
     this._technologiesService = experiencesService;
+    this._metaService = metaService;
+    this._titleService = titleService;
   }
 
   ngOnInit() {
+    this._titleService.setTitle('Robin CHEVALIER - Technos');
+    this._metaService.updateTag({
+      name: 'description',
+      content: 'Robin CHEVALIER - Technos',
+    });
     this.getTechnologies();
   }
 

@@ -6,10 +6,13 @@
  * available, such as `@angular/elements`.
  */
 import '@angular/platform-server/init';
-
 import { enableProdMode } from '@angular/core';
-
 import { environment } from './app/infrastructure/config/environments/environment';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'fr');
 
 if (environment.production) {
   enableProdMode();

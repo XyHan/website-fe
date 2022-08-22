@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Experience, ExperienceInterface } from '../../domain/model/experience';
+import { ExperienceInterface } from '../../domain/model/experience';
 import { ExperienceService, ExperiencesServiceInterface } from '../../infrastructure/service/experience.service';
 import { forkJoin, Observable } from 'rxjs';
 import { ExperienceType } from '../../domain/type/experience.type';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-experience',
@@ -14,15 +15,28 @@ export class ExperiencesComponent implements OnInit {
   private _isLoading: boolean;
   private _experiences: ExperienceType | null;
   private _experiencesService: ExperiencesServiceInterface;
+  private readonly _metaService: Meta;
+  private readonly _titleService: Title;
 
-  constructor(@Inject(ExperienceService) experiencesService: ExperiencesServiceInterface) {
+  constructor(
+    @Inject(ExperienceService) experiencesService: ExperiencesServiceInterface,
+    @Inject(Meta) metaService: Meta,
+    @Inject(Title) titleService: Title,
+  ) {
     this._error = null;
     this._isLoading = true;
     this._experiences = null;
     this._experiencesService = experiencesService;
+    this._metaService = metaService;
+    this._titleService = titleService;
   }
 
   ngOnInit() {
+    this._titleService.setTitle('Robin CHEVALIER - Expériences');
+    this._metaService.updateTag({
+      name: 'description',
+      content: 'Robin CHEVALIER - Expériences',
+    });
     this.getExperiences();
   }
 
