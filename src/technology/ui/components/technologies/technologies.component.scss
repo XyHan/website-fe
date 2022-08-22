@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 30px 0 0 0;
+  padding: 0;
+  min-height: 80vh;
   &__group {
     display: flex;
     flex-direction: row;
@@ -16,6 +17,7 @@
       min-width: 200px;
       margin: 0;
       padding: 13px 0 0 0;
+      font-weight: lighter;
     }
     .technologies {
       padding: 5px 0;
@@ -30,6 +32,7 @@
         color: var(--app-title-text);
         span {
           text-shadow: none;
+          font-weight: bold;
         }
       }
     }

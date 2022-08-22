@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { ThemeManagerInterface, ThemeType } from '../../domain/app/manager/theme.manager.interface';
-import { storageItemName, ThemeManager } from '../../infrastructure/manager/theme.manager';
+import { ThemeManagerInterface, ThemeType } from '../../../domain/app/manager/theme.manager.interface';
+import { storageItemName, ThemeManager } from '../../../infrastructure/manager/theme.manager';
 import { Router } from '@angular/router';
 
 @Component({
