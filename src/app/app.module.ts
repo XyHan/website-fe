@@ -11,7 +11,7 @@ import { TechnologyModule } from '../technology/technology.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ExperienceModule,
     TechnologyModule

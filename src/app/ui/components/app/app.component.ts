@@ -25,16 +25,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Get html template body element
-    this._body = (document.querySelector('body') as HTMLElement);
-    // Set current theme from localStorage. If there is no stored data, set light as default value;
-    this._themeManager.setTheme(this._body, localStorage.getItem(storageItemName) as ThemeType || 'light');
     // Subscribe to the theme observable to get current theme when it changes;
     this._themeManager.theme.subscribe((theme: ThemeType) => this._currentTheme = theme);
   }
 
   switchTheme(): void {
     const newThemeValue = this.themeToSwitchWith();
+    this._body = (document.querySelector('body') as HTMLElement);
     if (this._body) { this._themeManager.setTheme(this._body, newThemeValue); }
   }
 
