@@ -4,7 +4,6 @@ export interface ExperienceInterface {
     startDate: Date;
     endDate: Date | null;
     description: string;
-    city: string;
 }
 
 export abstract class Experience implements ExperienceInterface {
@@ -13,15 +12,13 @@ export abstract class Experience implements ExperienceInterface {
     protected _startDate: Date;
     protected _endDate: Date | null;
     protected _description: string;
-    protected _city: string;
 
-    constructor(title: string, company: string, startDate: Date, endDate: Date | null, description: string, city: string) {
+    constructor(title: string, company: string, startDate: Date, endDate: Date | null, description: string) {
         this._title = title;
         this._company = company;
         this._startDate = startDate;
         this._endDate = endDate;
         this._description = description;
-        this._city = city;
     }
 
     get title(): string {
@@ -62,13 +59,5 @@ export abstract class Experience implements ExperienceInterface {
 
     set description(value: string) {
         this._description = value;
-    }
-
-    get city(): string {
-        return this._city;
-    }
-    
-    set city(value: string) {
-        this._city = value;
     }
 }

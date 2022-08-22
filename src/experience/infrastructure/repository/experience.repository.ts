@@ -20,12 +20,10 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
                   <li>Développement d'APIs PHP (Symfony) en architecture hexagonale, connectées à ElasticSearch pour la lecture et MySQL pour l'écriture, reliées au reste de la stack technique par des évènements diffusés via SimpleBus et RabbitMQ.</li>
                   <li>Mise en place de gateways PHP (Symfony) et TypeScript (NestJS) en architecture hexagonale chargées de l'agrégation des données, ainsi que de la validation et du transfert des mutations de données, communiquant avec les projets frontaux via GraphQL, et avec les APIs via SimpleBus et RabbitMQ.</li>
                   <li>Maintenance et mise à niveau des APIs legacy (Symfony 2.8) : mise en place d'ElasticSearch, raccordement des APIs legacy à SimpleBus et RabbitMQ.</li>
-                  <li>Développement d'application frontend en VueJS et NuxtJS</li>
+                  <li>Développement d'applications frontend en VueJS et NuxtJS</li>
                   <li>Ecriture de tests unitaires (PhpUnit, Jest) et fonctionnels (Behat, Jest)</li>
                 </ul>
               `,
-              'Paris',
-              'CDI'
             ),
             new Job(
               'Ingénieur En Études et Développement',
@@ -41,9 +39,7 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
                   <li>Réalisation des sanity tests après déploiement</li>
                   <li>Développement de fonctionnalités de la version 2 du site sous Magento 2</li>
                 </ul>
-              `,
-              'Toulouse',
-              'CDI'
+              `
             ),
             new Job(
               'Développeur web junior',
@@ -60,9 +56,7 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
                   <li>Rédaction des documentations techniques et fonctionnelles</li>
                   <li>Mise en place de tests unitaires</li>
                 </ul>
-              `,
-              'Montigny le Bretonneux',
-              'Alternance'
+              `
             ),
             new Job(
               'Développeur WinDev junior',
@@ -76,9 +70,7 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
                   <li>Conception et développement du module de réservation des chambres</li>
                   <li>Conception et développement du module de facturation</li>
                 </ul>
-              `,
-              'Paris',
-              'Stage'
+              `
             ),
             new Job(
               'Développeur web junior',
@@ -93,9 +85,7 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
                   <li>Développement d'une interface d'authentification</li>
                   <li>Hébergement de l'application sur un serveur Windows interne</li>
                 </ul>
-              `,
-              'Buc',
-              'Stage'
+              `
             ),
         ]);
     }
@@ -107,24 +97,21 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
               'IPSSI',
               new Date('2015-07-01'),
               null,
-              '',
-              'Paris'
+              ''
             ),
             new Education(
               'BTS SIO',
               'Ascencia',
               new Date('2013-07-01'),
               null,
-              '',
-              'Montigny le Bretonneux'
+              ''
             ),
             new Education(
               'Bac STG',
               'Lycée Descartes',
               new Date('2007-07-01'),
               null,
-              '',
-              'Montigny le Bretonneux'
+              ''
             ),
         ]);
     }
