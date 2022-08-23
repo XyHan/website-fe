@@ -22,6 +22,7 @@ export class ExperienceRepository implements ExperienceRepositoryInterface {
                   <li>Maintenance et mise à niveau des APIs legacy (Symfony 2.8) : mise en place d'ElasticSearch, raccordement des APIs legacy à SimpleBus et RabbitMQ.</li>
                   <li>Développement d'applications frontend en VueJS et NuxtJS</li>
                   <li>Ecriture de tests unitaires (PhpUnit, Jest) et fonctionnels (Behat, Jest)</li>
+                  <li>Conception des nouvelles fonctionnalités</li>
                 </ul>
               `,
             ),
